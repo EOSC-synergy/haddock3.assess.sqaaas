@@ -1,0 +1,66 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.7
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/haddocking/haddock3:
+      branch: main
+      repo: https://github.com/haddocking/haddock3
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/haddocking/haddock3 git:
+        commands:
+        - /usr/bin/env sh .sqa/script.woolly-red-cichlid.sh
+        container: qc.acc_nerdy-gold-impala
+  QC.Doc:
+    repos:
+      github.com/haddocking/haddock3 find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-cream-tang.sh
+        container: qc.doc_freaky-olive-vulture
+      github.com/haddocking/haddock3 git:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-magenta-pinscher.sh
+        container: qc.doc_cheeky-carmine-lobster
+      github.com/haddocking/haddock3 markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.skanky-olivine-hornet.sh
+        container: qc.doc_freaky-charcoal-dogfish
+      github.com/haddocking/haddock3 restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.whiny-corn-stingray.sh
+        container: qc.doc_skimpy-brass-worm
+  QC.Lic:
+    repos:
+      github.com/haddocking/haddock3 licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.stuffy-pink-dog.sh
+        container: qc.lic_zippy-chartreuse-maltese
+  QC.Sec:
+    repos:
+      github.com/haddocking/haddock3 bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.clammy-lemon-mongrel.sh
+        container: qc.sec_stuffy-jade-dog
+  QC.Sty:
+    repos:
+      github.com/haddocking/haddock3 flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.pretty-saffron-butterfly.sh
+        container: qc.sty_gimpy-razzmatazz-affenpinscher
+      github.com/haddocking/haddock3 jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-apricot-hyena.sh
+        container: qc.sty_gimpy-olivine-rhinoceros
+  QC.Ver:
+    repos:
+      github.com/haddocking/haddock3 get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.hazy-buff-caiman.sh
+        container: qc.ver_squirrely-rose-hamster
+timeout: 5400
