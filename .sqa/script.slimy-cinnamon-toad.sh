@@ -1,4 +1,4 @@
 (
-cd github.com/haddocking/haddock3 &&
+cd www &&
     git rev-parse --is-inside-work-tree
 )

@@ -1,4 +1,4 @@
 (
-cd github.com/haddocking/haddock3 &&
+cd www &&
     licensee detect . --confidence 60 --json
 )

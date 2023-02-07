@@ -1,4 +1,4 @@
 (
-cd github.com/haddocking/haddock3 &&
+cd www &&
     rst-lint --level warning --format json .
 )
