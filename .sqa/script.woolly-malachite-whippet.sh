@@ -1,4 +1,0 @@
-(
-cd www &&
-    mdl --json .
-)

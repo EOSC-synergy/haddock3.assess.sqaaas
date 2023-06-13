@@ -2,65 +2,65 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.8
+      branch: release/1.7.11
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
-    www:
+    github.com/haddocking/haddock3:
       branch: main
-      repo: https://www.github.com/haddocking/haddock3
+      repo: https://github.com/haddocking/haddock3
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
   QC.Acc:
     repos:
-      www git:
+      github.com/haddocking/haddock3 git:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-smalt-baboon.sh
-        container: qc.acc_randy-pink-hare
+        - /usr/bin/env sh .sqa/script.muggy-seashell-beetle.sh
+        container: qc.acc_leaky-mauve-hound
   QC.Doc:
     repos:
-      www find_doc_files.py:
+      github.com/haddocking/haddock3 find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.trippy-magnolia-pig.sh
-        container: qc.doc_pokey-brown-sheepdog
-      www git:
+        - /usr/bin/env sh .sqa/script.scanty-russet-gopher.sh
+        container: qc.doc_bluesy-cardinal-fowl
+      github.com/haddocking/haddock3 git:
         commands:
-        - /usr/bin/env sh .sqa/script.slimy-cinnamon-toad.sh
-        container: qc.doc_baggy-eggplant-ferret
-      www markdownlint:
+        - /usr/bin/env sh .sqa/script.flabby-brown-moorhen.sh
+        container: qc.doc_muzzy-bistre-mist
+      github.com/haddocking/haddock3 markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.woolly-malachite-whippet.sh
-        container: qc.doc_boozy-magenta-sheepdog
-      www restructuredtext-lint:
+        - /usr/bin/env sh .sqa/script.craggy-burgundy-grouse.sh
+        container: qc.doc_chummy-amaranth-chimpanzee
+      github.com/haddocking/haddock3 restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.pokey-linen-kiwi.sh
-        container: qc.doc_smelly-copper-woodpecker
+        - /usr/bin/env sh .sqa/script.shaggy-linen-jellyfish.sh
+        container: qc.doc_hasty-brass-terrier
   QC.Lic:
     repos:
-      www licensee:
+      github.com/haddocking/haddock3 licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.droopy-auburn-sparrow.sh
-        container: qc.lic_wheezy-ruby-abyssinian
+        - /usr/bin/env sh .sqa/script.hilly-taupe-quokka.sh
+        container: qc.lic_homey-copper-grouse
   QC.Sec:
     repos:
-      www bandit:
+      github.com/haddocking/haddock3 bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-ivory-albatross.sh
-        container: qc.sec_gimpy-purple-blue
+        - /usr/bin/env sh .sqa/script.scummy-silver-crane.sh
+        container: qc.sec_surly-plum-mau
   QC.Sty:
     repos:
-      www flake8:
+      github.com/haddocking/haddock3 flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.lumpy-harlequin-mule.sh
-        container: qc.sty_scummy-pink-gar
-      www jsonlint:
+        - /usr/bin/env sh .sqa/script.pokey-alizarin-moth.sh
+        container: qc.sty_flimsy-xanthic-angelfish
+      github.com/haddocking/haddock3 jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.grumpy-orchid-worm.sh
-        container: qc.sty_ugly-russet-chinook
+        - /usr/bin/env sh .sqa/script.goopy-amber-lemming.sh
+        container: qc.sty_baggy-peach-havanese
   QC.Ver:
     repos:
-      www get_git_tags.py:
+      github.com/haddocking/haddock3 get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.frumpy-persimmon-vulture.sh
-        container: qc.ver_lovely-razzmatazz-barb
+        - /usr/bin/env sh .sqa/script.sunny-purple-birman.sh
+        container: qc.ver_whiny-beige-donkey
 timeout: 5400
