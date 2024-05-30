@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.11
+      branch: release/2.0.1
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/haddocking/haddock3:
       branch: main
@@ -15,52 +15,64 @@ sqa_criteria:
     repos:
       github.com/haddocking/haddock3 git:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-seashell-beetle.sh
-        container: qc.acc_leaky-mauve-hound
+        - /usr/bin/env sh .sqa/script.gamy-amethyst-havanese.sh
+        container: qc.acc_chewy-chartreuse-rat
   QC.Doc:
     repos:
       github.com/haddocking/haddock3 find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-russet-gopher.sh
-        container: qc.doc_bluesy-cardinal-fowl
+        - /usr/bin/env sh .sqa/script.sleazy-rose-bonobo.sh
+        container: qc.doc_randy-cinnamon-slug
       github.com/haddocking/haddock3 git:
         commands:
-        - /usr/bin/env sh .sqa/script.flabby-brown-moorhen.sh
-        container: qc.doc_muzzy-bistre-mist
+        - /usr/bin/env sh .sqa/script.woozy-maroon-markhor.sh
+        container: qc.doc_slimy-ultramarine-dogfish
       github.com/haddocking/haddock3 markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.craggy-burgundy-grouse.sh
-        container: qc.doc_chummy-amaranth-chimpanzee
+        - /usr/bin/env sh .sqa/script.snoopy-aqua-chipmunk.sh
+        container: qc.doc_skimpy-heliotrope-binturong
       github.com/haddocking/haddock3 restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-linen-jellyfish.sh
-        container: qc.doc_hasty-brass-terrier
+        - /usr/bin/env sh .sqa/script.gamy-teal-giraffe.sh
+        container: qc.doc_boozy-indigo-cow
   QC.Lic:
     repos:
       github.com/haddocking/haddock3 licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.hilly-taupe-quokka.sh
-        container: qc.lic_homey-copper-grouse
+        - /usr/bin/env sh .sqa/script.scummy-white-bombay.sh
+        container: qc.lic_cranky-brown-chamois
+  QC.Met:
+    repos:
+      github.com/haddocking/haddock3 cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.stinky-myrtle-skunk.sh
+        container: qc.met_shabby-tomato-tiger
   QC.Sec:
     repos:
       github.com/haddocking/haddock3 bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.scummy-silver-crane.sh
-        container: qc.sec_surly-plum-mau
+        - /usr/bin/env sh .sqa/script.paltry-jade-goose.sh
+        container: qc.sec_lovely-sepia-dollar
   QC.Sty:
     repos:
       github.com/haddocking/haddock3 flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.pokey-alizarin-moth.sh
-        container: qc.sty_flimsy-xanthic-angelfish
+        - /usr/bin/env sh .sqa/script.sloppy-eggplant-iguana.sh
+        container: qc.sty_wiggy-carmine-bandicoot
       github.com/haddocking/haddock3 jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.goopy-amber-lemming.sh
-        container: qc.sty_baggy-peach-havanese
+        - /usr/bin/env sh .sqa/script.lanky-tomato-leopard.sh
+        container: qc.sty_lanky-corn-squirrel
+  QC.Uni:
+    repos:
+      github.com/haddocking/haddock3 pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-cinnamon-dolphin.sh
+        container: qc.uni_flimsy-peach-monkey
   QC.Ver:
     repos:
       github.com/haddocking/haddock3 get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-purple-birman.sh
-        container: qc.ver_whiny-beige-donkey
+        - /usr/bin/env sh .sqa/script.dorky-tangerine-orangutan.sh
+        container: qc.ver_wheezy-pear-mandrill
 timeout: 5400
